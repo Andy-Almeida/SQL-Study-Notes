@@ -69,3 +69,33 @@ SQL WHERE Clause
 	LIKE		Search for a pattern					WHERE City LIKE 's%';
 	IN		To specify multiple possible values for a column	WHERE City IN ('Paris', 'London');
 		
+SQL ORDER BY Keyword
+	ORDER BY keyword is used to sort the result-set in ascending or descending order.
+	
+	Syntax:
+		SELECT column1, column2
+		FROM table_name
+		ORDER BY column1, column2, ... ASC|DESC;
+
+		SELECT * FROM Products
+		ORDER BY Price;
+
+	DESC
+		SELECT * FROM Products
+		ORDER BY Price DESC;
+
+	Order Alphabetically
+		SELECT * FROM Products
+		ORDER BY ProductName;
+
+	Alphabetically DESC
+		SELECT * FROM Products
+		ORDER BY ProductName DESC;
+
+	ORDER BY Several Columns
+		SELECT * FROM Customers
+		ORDER BY Country, CustomerName;
+
+	Using Both ASC and DESC
+		SELECT * FROM Customers
+		ORDER BY Country ASC, CustomerName DESC;
