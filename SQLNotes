@@ -11,3 +11,15 @@ Most Important SQL Commands
 	CREATE INDEX -creates an index (search key)
 	DROP INDEX - deletes an index
 
+SQL SELECT Statement
+	SELECT statement is use to select data from a database
+
+	Syntax:
+		SELECT column1, column2, ...
+		FROM table_name;
+
+		SELECT CustomerName, City 
+		FROM Customers;
+
+	Select All Cloumns
+		SELECT * FROM Customers
