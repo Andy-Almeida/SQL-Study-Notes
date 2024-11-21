@@ -133,4 +133,35 @@ SQL OR Operator
 		FROM Customers
 		WHERE Country = 'Spain' OR Country = 'Germany';
 
+SQL NOT Operator
+	NOT operator is used in combination with other operators to give the opposite result
+
+	Syntax:
+		SELECT column1, column2, ...
+		FROM table_name
+		WHERE NOT condition;
+
+		SELECT *
+		FROM Customers
+		WHERE NOT Country = 'Spain';
+
+		SELECT *
+		FROM Customers
+		WHERE CustomerName NOT LIKE 'A%';
+
+		SELECT *
+		FROM Customers
+		WHERE CustomerID NOT BETWEEN 10 AND 60;
+
+		SELECT *
+		FROM Customers
+		WHERE City NOT IN ('Paris', 'London');
+
+		SELECT * FROM Customers
+		WHERE NOT CustomerID > 50;
+
+		SELECT * FROM Customers
+		WHERE NOT CustomerID < 50;
+
+
 
