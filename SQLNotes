@@ -36,3 +36,36 @@ SQL SELECT DISTINCT Statement
 
 	By using the DISTINCT keyword in a function called COUNT, we can return the number of different countries.
 		SELECT COUNT(DISTINCT Country) FROM Customers;
+
+SQL WHERE Clause
+	WHERE clause is used to filter records.
+
+	Syntax:
+		SELECT column1, column2, ...
+		FROM table_name
+		WHERE condition;
+
+		SELECT *
+		FROM Customers
+		WHERE Country='Mexico';
+
+	Note: The WHERE clause is not only used in SELECT statements, it is also used in UPDATE, DELETE, etc.!
+
+	Text Fields vs. Numeric Fields
+	Single Quotes around text values
+	No quotes around Numeric Fields
+
+		SELECT * FROM Customers			SELECT * FROM Customers
+		WHERE CustomerID=1;			WHERE Name='Andy';
+
+	Operators that can be used in the WHERE clause:
+	=		Equal							WHERE Price = 10;	
+	>		Greater Than						WHERE Price > 30;
+	< 		Less than						WHERE Price < 30;
+	>=		Greater than or equal					WHERE Price >= 30;
+	<= 		Less than or equal					WHERE Price <= 30;
+	<>		Not equal (May also be written as !=)			WHERE Price <> 18;
+	BETWEEN		Between a certain range					WHERE Price BETWEEN 50 AND 60;
+	LIKE		Search for a pattern					WHERE City LIKE 's%';
+	IN		To specify multiple possible values for a column	WHERE City IN ('Paris', 'London');
+		
