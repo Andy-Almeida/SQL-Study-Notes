@@ -231,3 +231,17 @@ SQL UPDATE Statement
 	With no WHERE clause, all records will be updated
 		UPDATE Customers
 		SET ContactName='Juan';
+
+SQL DELETE Statement
+	DELETE statement is used to delete existing records in a table
+	
+	Syntax:
+		DELETE FROM table_name WHERE condition;
+
+		DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+
+	Delete all records, table structure, attributes, and indexes will be intact
+		DELETE FROM table_name;
+	
+	Delete a table
+		DROP TABLE Customers;
