@@ -21,7 +21,7 @@ SQL SELECT Statement
 		SELECT CustomerName, City 
 		FROM Customers;
 
-	Select All Cloumns
+	Select All Columns
 		SELECT * FROM Customers
 
 SQL SELECT DISTINCT Statement
@@ -187,6 +187,24 @@ SQL INSERT INTO Statement
 		('Greasy Burger', 'Per Olsen', 'Gateveien 15', 'Sandnes', '4306', 'Norway'),
 		('Tasty Tee', 'Finn Egan', 'Streetroad 19B', 'Liverpool', 'L1 0AA', 'UK');
 		
+SQL NULL Values
+	A NULL value is a field with no value.
+	It is not possible to test for NULL values with comparison operators, such as =, <, or <>
+	Must use IS NULL and IS NOT NULL
 
+	Syntax:
+		SELECT column_names
+		FROM table_name
+		WHERE column_name IS NULL;
 
+		SELECT column_names
+		FROM table_name
+		WHERE column_name IS NOT NULL;
 
+		SELECT CustomerName, ContactName, Address
+		FROM Customers
+		WHERE Address IS NULL;
+
+		SELECT CustomerName, ContactName, Address
+		FROM Customers
+		WHERE Address IS NOT NULL;
