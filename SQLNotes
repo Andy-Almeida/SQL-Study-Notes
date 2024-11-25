@@ -462,3 +462,54 @@ SQL LIKE Operator
 	If no wildcard is specified, the prase has to have an exact match to return a result:
 		SELECT * FROM Customers
 		WHERE Country LIKE 'Spain';
+
+SQL Wildcards
+	A wildcard character is used to substitue one or more characters in a string.
+	
+	Wildcard characters are used with the LIKE operator. 
+	The LIKE operator is used in a WHERE clause to search for a specified pattern in a column
+
+	Wildcard Characters
+	%	Represents zero or more characters
+	_	Represents a single character
+	[]	Represents any single character within the brackets 
+	&	Represents any character not in the brackets
+	-	Represents any single character within the specified range
+	{}	Represents any escaped character
+
+	Using the % Wildcard
+	Returns all customers that ends with the pattern 'es':
+		SELECT * FROM Customers
+		WHERE CustomerName LIKE '%es';
+
+	Returns all customers that contains the pattern 'mer':
+		SELECT * FROM Customers
+		WHERE CustomerName LIKE '%mer%';
+
+	Using the _ Wildcard
+	Returns all customers with a City starting with any character, followed by "ondon":
+		SELECT * FROM Customers
+		WHERE City LIKE '_ondon';
+
+	Returns all customers with a City starting with "L", followed by any 3 characters, ending with "on":
+		SELECT * FROM Customers
+		WHERE City LIKE 'L___on';
+
+	Using the [] Wildcard
+	Return all customers starting with either "b", "s", or "p":
+		SELECT * FROM Customers
+		WHERE CustomerName LIKE '[bsp]%';
+
+	Using the - Wildcard
+	Return all customers starting with "a", "b", "c", "d", "e" or "f":
+		SELECT * FROM Customers
+		WHERE CustomerName LIKE '[a-f]%';
+
+	Combine Wildcards
+	Returns all customers that starts with "a" and are at least 3 characters in length:
+		SELECT * FROM Customers
+		WHERE CustomerName LIKE 'a__%';
+
+	Returns all customers that have "r" in the second position:
+		SELECT * FROM Customers
+		WHERE CustomerName LIKE '_r%';
