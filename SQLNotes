@@ -622,3 +622,43 @@ SQL Joins
 	LEFT (OUTER) JOIN	Returns all records from the left table, and the matched records from the right table
 	RIGHT (OUTER) JOIN	Returns all records from the right table, and the amtched records from the left table
 	FULL (OUTER) JOIN	Return all records when there is a match in either left or right table
+
+SQL INNER JOIN
+	INNER JOIN keyword selects records that have matching values in both tables.
+	
+	Syntax:
+		SELECT column_name(s)
+		FROM table1
+		INNER JOIN table2
+		ON table.column_name = table2.column_name;
+
+		SELECT ProductID, ProductName, CategoryName
+		FROM Products
+		INNER JOIN Categories
+		ON Products.CategoryID = Categories.CategoryID;
+
+	The example above works without specifying table names, because none of the specified column names are present in both tables.
+	If you try to include CategoryID in the SELECT statement, you will get an error if you do not specify the table name (because CategoryID is present in both tables).
+		SELECT Products.ProductID, 
+		       Products.ProductName, 
+		       Categories.CategoryName,
+		FROM Products
+		JOIN Categories
+		ON Products.CategoryID = Categories.CategoryID;
+
+	JOIN and INNER JOIN will result the same result.
+	INNER is the default join type for JOIN, so when you write JOIN the parser actually writes INNER JOIN.
+		SELECT Products.ProductID, 
+		       Products.ProductName, 
+		       Categories.CategoryName,
+		FROM Products
+		JOIN Categories
+		ON Products.CategoryID = Categories.CategoryID;
+
+	Select all orders with customer and shipper information:
+		SELECT Orders.OrderID,
+		       Customers.CustomerName,
+		       Shippers.ShipperName
+		FROM ((Orders
+		INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
+		INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
