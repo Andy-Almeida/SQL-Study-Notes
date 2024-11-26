@@ -513,3 +513,12 @@ SQL Wildcards
 	Returns all customers that have "r" in the second position:
 		SELECT * FROM Customers
 		WHERE CustomerName LIKE '_r%';
+
+SQL IN Operator
+	IN operator allows you to specify multiple values in a WHERE clause
+	IN operator is a shorthand for multiple OR conditions
+
+	Syntax:
+		SELECT column_name(s)
+		FROM table_name
+		WHERE column_name IN 
