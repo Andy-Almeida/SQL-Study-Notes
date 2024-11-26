@@ -571,3 +571,46 @@ SQL BETWEEN Operator
 
 		SELECT * FROM Orders
 		WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+
+SQL Aliases
+	Aliases are used to give a table, or column in a table, a temporary name
+	Uses the AS keyword
+
+	Syntax:
+		SELECT column_name AS alias_name
+		FROM table_name;
+	
+		SELECT column_name(s)
+		FROM table_name AS alias_name;
+
+		SELECT CustomerID AS ID
+		FROM Customers;
+
+	AS is Optional
+		SELECT CustomerID ID
+		FROM Customers;
+
+		SELECT CustomerID AS ID, CustomerName AS Customer
+		FROM Customers;
+
+	Using Aliases With a Space Character
+		SELECT ProductName AS [My Great Products]
+		FROM Products;
+	
+		SELECT ProductName AS "My Great Products"
+		FROM Products;
+
+	Concatenate Columns
+	Creates an alias named "Address" that combine four columns (Address, PostalCode, City and Country)
+		SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address
+		FROM Customers;
+	
+		SELECT CustomerName, CONCAT(Address, ', ', PostalCode, ', ', City, ', ', Country) AS Address
+		FROM Customers;
+	
+	Alias for Tables
+		SELECT * FROM Customers AS Persons;
+
+		SELECT o.OrderID, o.OrderDate, c.CustomerName
+		FROM Customers AS c, Orders AS o
+		WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
