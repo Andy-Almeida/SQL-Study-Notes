@@ -534,3 +534,40 @@ SQL IN Operator
 
 		SELECT * FROM Customers
 		WHERE CustomerID NOT IN (SELECT CustomerID FROM Orders);
+
+SQL BETWEEN Operator
+	BETWEEN operator selects values within a given range.
+	The values can be numbers, text, or dates.
+	BETWEEN operator is inclusive: begin and end values are included
+
+	Syntax:
+		SELECT column_name(s)
+		FROM table_name
+		WHERE column_name BETWEEN value1 AND value2;
+
+		SELECT * FROM Products
+		WHERE Price BETWEEN 10 AND 20;
+
+		SELECT * FROM Products
+		WHERE Price NOT BETWEEN 10 AND 20;
+
+		SELECT * FROM Products
+		WHERE Price BETWEEN 10 AND 20
+		AND CategoryID IN (1,2,3);
+
+	Selects all products with a ProductName alphabetically between two things
+		SELECT * FROM Products
+		WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+		ORDER BY ProductName;
+
+	NOT BETWEEN Text Values
+		SELECT * FROM Products
+		WHERE ProductName NOT BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+		ORDER BY ProductName;
+
+	BETWEEN Dates
+		SELECT * FROM Orders
+		WHERE OrderDate BETWEEN #07/01/1996# AND #07/31/1996#;
+
+		SELECT * FROM Orders
+		WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
