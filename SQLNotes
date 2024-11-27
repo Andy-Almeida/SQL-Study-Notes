@@ -850,3 +850,25 @@ SQL HAVING Clause
 		WHERE LastName = 'Davolio' OR LastName = 'Fuller'
 		GROUP BY LastName
 		HAVING COUNT(Orders.OrderID) > 25;
+
+SQL EXISTS Operator
+	EXISTS operator is used to test for the existence of any record in a subquery.
+	EXISTS operator returns TRUE if the subquery returns one or more records.
+
+	Syntax:
+		SELECT column_name(s)
+		FROM table_name
+		WHERE EXISTS
+		(SELECT column_name FROM table_name WHERE condition);
+
+		SELECT SupplierName
+		FROM Suppliers
+		WHERE EXISTS ( SELECT ProductName
+			       FROM Products
+			       WHERE Products.SupplierID = Suppliers.SupplierID AND PRICE < 20);
+
+		SELECT SupplierName
+		FROM Suppliers
+		WHERE EXISTS ( SELECT ProductName
+			       FROM Products
+			       WHERE Products.SupplierID = Suppliers.SupplierID AND Price = 22);
