@@ -702,3 +702,23 @@ SQL RIGHT JOIN Keyword
 		ORDER BY Orders.OrderID;
 
 	The RIGHT JOIN keyword returns all records from the right table (Employees), even if there are no matches in the left table (Orders)
+
+SQL FULL OUTER JOIN Keyword
+	FULL OUTER JOIN keyword returns all records when there is a match in left (table1) or right (table2) table records.
+	FULL OUTER JOIN and FULL JOIN are the same
+
+	Syntax:
+		SELECT column_name(s)
+		FROM table1
+		FULL OUTER JOIN table2
+		ON table1.column_name = table2.column_name
+		WHERE condition;
+
+	Note: FULL OUTER JOIN can potentially return very large result-sets!
+
+		SELECT Cusomters.CustomerName,
+		       Orders.OrderID
+		FROM Customers
+		FULL OUTER JOIN Orders 
+		ON Customers.CustomerID = Orders.CustomerID
+		ORDER BY Customers.CustomerName;
