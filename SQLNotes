@@ -784,3 +784,33 @@ SQL UNION Operator
 		UNION
 		SELECT 'Supplier', ContactName, City, Country
 		FROM Suppliers;
+
+SQL GROUP BY Statement
+	GROUP BY statement groups rows that have the same values into summary rows, 
+	like "find the number of customers in each country".
+
+	GROUP BY statement is often used to aggregate functions
+	(COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+
+	Syntax:
+		SELECT column_name(s)
+		FROM table_name
+		WHERE condition
+		GROUP BY column_name(s)
+		ORDER BY column_name(s)
+
+		SELECT COUNT(CustomerID), Country
+		FROM Customers
+		GROUP BY Country;
+
+		SELECT COUNT(CustomerID), Country
+		FROM Customers
+		GROUP BY Country
+		ORDER BY COUNT(CustomerID) DESC;
+
+		SELECT Shippers.ShipperName,
+		       COUNT(Orders.OrderID) AS NumberOfOrders
+		FROM Orders
+		LEFT JOIN Shippers
+		ON Orders.ShipperID = Shippers.ShipperID
+		GROUP BY ShipperName;
