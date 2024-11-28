@@ -1079,3 +1079,16 @@ SQL Stored Procedures for SQL Server
 		GO;
 
 		EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';	
+
+SQL Comments
+	Single line comments start with --
+		-- Select all:
+		SELECT * FROM Customers;
+	
+		SELECT * FROM Customers -- WHERE City='Berlin';
+
+	Multiline Comments /* */
+		/* Select all the columns
+		of all the records
+		in the Customers table: */
+		SELECT * FROM Customers;
